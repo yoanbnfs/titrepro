@@ -1,0 +1,20 @@
+{
+  "name": "mon-projet",
+  "authors": [
+    "Yoan Bonnefis <yoan.bonnefis@yahoo.fr>"
+  ],
+  "description": "mon projet professionnel",
+  "main": "index.php",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

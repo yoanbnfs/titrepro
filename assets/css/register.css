@@ -1,0 +1,87 @@
+/*@media screen and (max-width: 768px){
+    .modal-dialog{
+        width: 100%;
+    }
+    .modal-content{
+        width: 100%;
+    }
+}*/
+.registration-link{
+    cursor: pointer;
+    text-decoration: none;
+    color: #68BDEA;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    padding: 8% 2% 0 0;
+}
+#registration-title, #login-title{
+    font-size: 22px;
+    font-family: 'Paytone One', sans-serif;
+
+}
+label{
+    display: block;
+    margin:0;
+}
+.modal-header{
+    background-color: #014C45;
+    color: white;
+}
+.modal-dialog{
+    margin-top: 10%;  
+}
+.modal-content{
+    text-align: center;
+}
+.modal-body{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+legend{
+    font-size: 16px;
+    border: none;
+    margin: 0;
+    letter-spacing: 0.2em;
+    color: #858585;
+}
+.form-input{
+    width: 60%;
+    border: inherit;
+    border-bottom: 2px solid #c8c8c8;    
+}
+.form-input:focus{
+    border-color: #2196F3;
+    transition: border-color 1s linear;
+}
+.form-errors{
+    color: red;
+}
+.form-labels{
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.login{
+  padding-top: 1%;
+  padding-bottom: 4%;
+}
+#civil-status{
+  padding-top: 1%;
+}
+#datepicker{
+  margin-left: 3.2%;
+}
+#validation-group{
+    margin-top: 8%;
+}
+#validation-group>button{
+    margin: 5px;
+}
+#show-password{
+    padding-right: 2%;
+    cursor: pointer;
+}
+
+
+ 

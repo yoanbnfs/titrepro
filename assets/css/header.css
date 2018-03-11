@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Paytone+One');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@media screen and (min-width: 1198px) and (max-width: 1590px){
+    #session-connect{
+        text-align: left;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    #session-connect{
+        padding: 0 !important;
+        
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 768px){
+    .icon-spacing{ 
+        padding-left: 2px;
+    }
+}
+@media screen and (max-width: 768px){
+    #social-networks{
+        margin-top: 12px;
+    }
+    #session-connect{
+        padding-top: 0 !important;
+    }
+    .navbar-form{
+        margin-bottom: 0;
+    }
+}
+*{font-family: Quicksand, sans-serif;}
+#top-header{
+    background-color: #014c45;
+}
+h1{
+    font-family: 'Paytone One', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+#h2-legend{
+    font-family: 'Quicksand', sans-serif;
+    color: #eee;
+    margin: -7px 0 0 0;
+    padding: 2px 0 7px 0;
+    font-size: 14px;
+}
+
+.navbar-form{      
+    margin-top: 10px;
+    text-align: left;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    float: left;
+}
+.navbar-default{
+    border-radius:0;
+}
+#search-label{
+    visibility: hidden;
+    display: inline-block;
+}
+#search-bar{
+    color: #fff;
+    background-color: #fff;
+    margin-top: 1.4px;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    width: 80%;
+    float: left;
+}
+#search-bar::placeholder{
+    opacity: 0.8;
+    color: #a5a5a5;
+    font-style: italic;
+}
+#search-button{
+    font-size: 16px;
+    color: #014c45;
+}
+#button-group{
+    padding: 0;
+}
+#social-networks{
+    padding-top: 6px;
+    font-size: 3rem;
+    color: #fff;
+    text-align: right;
+}
+#session-connect{
+    margin-top: 3px;
+    padding: 15px 0 0 0;
+    text-align: right;
+}
+.navbar-collapse{
+    padding-left: 0;
+}
+#menu-container{
+    padding: 0;
+}
+#menu{
+    padding-left: 2%;
+}
+.menu-items{
+    letter-spacing: 0.0em;
+}
