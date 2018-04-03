@@ -1,0 +1,4 @@
+.form-input:focus{
+    border-color: #2196F3;
+    transition: border-color 1s linear;
+}

@@ -3,8 +3,6 @@ var searchbarPlaceholder = function () {
  };
  $('#search-bar').focus(searchbarPlaceholder);
  $('#search-button').hover(searchbarPlaceholder);
-
-
  $('#search-button').click(function(e) {
      e.preventDefault();
      var search = $('#search-bar').val();
@@ -22,11 +20,6 @@ var searchbarPlaceholder = function () {
 
          $('#search-result').empty();
      }
-
-
-
-
-
      $('#search-result').mouseleave(function () {
          $('#search-result').slideUp(400);
      });

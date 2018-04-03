@@ -1,6 +1,4 @@
-<?php
-include 'header.php';
-include '../controllers/userProfilController.php';
+<?php 
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +13,10 @@ include '../controllers/userProfilController.php';
         <link rel="stylesheet" href="../assets/css/login.css">
     </head>
     <body>
+        <div class="container-fluid">
+            <?php include 'header.php'; ?>
+            
+        </div>
         <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6">            
             <div class="panel panel-success">
                 <div class = "panel-heading">
@@ -38,6 +40,7 @@ include '../controllers/userProfilController.php';
                 </div>                                    
             </div>
         </div>
+        <?php include 'footer.php';?>
     </body>
 </html>
 

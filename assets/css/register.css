@@ -6,16 +6,6 @@
         width: 100%;
     }
 }*/
-.registration-link{
-    cursor: pointer;
-    text-decoration: none;
-    color: #68BDEA;
-    font-variant: small-caps;
-    font-weight: bold;
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    padding: 8% 2% 0 0;
-}
 #registration-title, #login-title{
     font-size: 22px;
     font-family: 'Paytone One', sans-serif;
@@ -30,7 +20,7 @@ label{
     color: white;
 }
 .modal-dialog{
-    margin-top: 10%;  
+    margin-top: 5%;  
 }
 .modal-content{
     text-align: center;
@@ -55,18 +45,26 @@ legend{
     border-color: #2196F3;
     transition: border-color 1s linear;
 }
+.form-radio{
+    display: inline-block;
+}
 .form-errors{
     color: red;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    line-height: 0.8em;
+    
 }
 .form-labels{
   padding-top: 3%;
   padding-bottom: 3%;
 }
-.login{
+.user-login{
   padding-top: 1%;
   padding-bottom: 4%;
 }
-#civil-status{
+#user-civil-status{
   padding-top: 1%;
 }
 #datepicker{

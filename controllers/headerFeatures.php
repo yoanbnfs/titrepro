@@ -1,8 +1,8 @@
 <?php
 
 if (isset($_POST['searches'])) {
-    include '../models/dataBase.php';
-    include '../models/features.php';
+    include_once '../models/dataBase.php';
+    include_once '../models/features.php';
 
     $search = new features();
 
@@ -13,11 +13,11 @@ if (isset($_POST['searches'])) {
 
 } else {
     if ($_SERVER['PHP_SELF'] == '/index.php'){
-        include 'models/dataBase.php';
-        include 'models/features.php';
+        include_once 'models/dataBase.php';
+        include_once 'models/features.php';
     } else {
-        include '../models/dataBase.php';
-        include '../models/features.php';
+        include_once '../models/dataBase.php';
+        include_once '../models/features.php';
         
     }
     $searchesList = '';
