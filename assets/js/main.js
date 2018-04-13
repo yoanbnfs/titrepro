@@ -1,12 +1,16 @@
+$(window).resize(function(){
+    if ($(window).width() < 768){
+        $('#menu-container').insertAfter('.navbar');        
+    } else {
+        $('#menu-container').insertBefore('#button-group');
+    }    
+});
 $(function () {
     $('[data-toggle="popover"]').popover(); 
-    console.log($(window).width());
-
-    if($(window).width() > 1198 && $(window).width() < 1590){
-        
-    }        
     $('#name-control, #subtypes-control').hide();
-    
+    if ($(window).width() < 768){
+        $('#menu-container').insertAfter('.navbar');        
+    }
     $('#professional-reg').click(function(){
         if ($(this).is(':checked')){
             $('#lastname-control, #firstname-control, #birthdate-control').hide();
@@ -20,7 +24,11 @@ $(function () {
         } 
     });
     $('#show-password').click(function(){
-        $('#password').toggle(attr('type', 'text'));
+        if ($('#password').attr('type') === 'password'){
+            $('#password').attr('type', 'text');
+        } else {
+            $('#password').attr('type', 'password');            
+        }
     });
     $('.account-inputs').css({'border':'none'}, {'background-color':'transparent'});
     $('#profil-update').click(function(){

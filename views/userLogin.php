@@ -15,7 +15,7 @@
                                     <input class="form-input" type="password" name="password-connect" placeholder="8 cractères minimum" />
                                 <div id="validation-group">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                                    <button type="submit" id="submit" name="submit" class="btn btn-primary">Valider</button>                                    
+                                    <button type="submit" id="submit" name="submit-connect" class="btn btn-primary">Valider</button>                                    
                                 </div>
                             </form>
                         </div>                        

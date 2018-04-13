@@ -50,7 +50,7 @@ include '../controllers/accountController.php';
                                 <div id="profil-mail-control">
                                     <label class="form-labels" for="profil-mail">adresse mail : </label>
                                     <input class="form-input account-inputs" type="text" name="profil-mail" id="profil-mail" readonly value="<?= $_SESSION['auth']['mail'] ?>" />
-                                </div>                                
+                                </div>                                  
                                 <?php if (isset($_SESSION['auth']['subType'])){ ?>
                                 <div id="profil-subtype-control">
                                     <label class="form-labels" for="profil-subtype">Domaine : </label>
@@ -59,10 +59,32 @@ include '../controllers/accountController.php';
                                 <?php } ?>
                                 <div class="profil-submit-control">
                                     <input type="button" name="update" id="profil-update" class="btn btn-info" value="Modifier mes information" />
-                                    <input type="submit" name="submit" id="profil-submit" class="btn btn-success hidden" value="valider les changements" />
-                                    <input type="button" name="delete" id="profil-delete" class="btn btn-danger hidden" value="supprimer mon compte" />
+                                    <input type="submit" name="profil-submit" id="profil-submit" class="btn btn-success hidden" value="valider les changements" />
+                                    <input type="button" name="delete" id="profil-delete" class="btn btn-danger hidden" data-toggle="modal" data-target="#confirmation" value="supprimer mon compte" />
                                 </div>
                             </form>                           
+                            <div id="confirmation" class="modal fade" tabindex="1" role="dialog"><!--INSCRIPTION MODAL-->
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h5 id="login-title">Connexion</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="login-form" action="#" method="POST">
+                                                <label class="form-labels" for="password-delete">Mot de passe</label>
+                                                <input class="form-input" type="password" name="password-delete" id="password-delete" placeholder="nom@domaine.fr" />                                                    
+                                                <div id="validation-group">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                                    <button type="submit" id="submit" name="submit-connect" class="btn btn-primary">Valider</button>                                    
+                                                </div>
+                                            </form>
+                                        </div>                        
+                                    </div>
+                                </div>
+                            </div><!--INSCRIPTION MODAL FIN-->
                         </div>
                     </div>
                 </div>

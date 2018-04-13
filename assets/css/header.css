@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Paytone+One');
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-@media screen and (min-width: 1198px) and (max-width: 1590px){
-    #session-connect{
-        text-align: left;
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 992px){
-    #session-connect{
-        padding: 0 !important;
-        
-    }
-}
-@media screen and (min-width: 480px) and (max-width: 768px){
-    .icon-spacing{ 
-        padding-left: 2px;
-    }
-}
 @media screen and (max-width: 768px){
-    #social-networks{
-        margin-top: 12px;
+    #top-header{
+        background : none; 
     }
-    #session-connect{
-        padding-top: 0 !important;
+    #menu-container>button{
+        margin-left: 2%; 
     }
-    .navbar-form{
-        margin-bottom: 0;
+    .navbar-toggle{
+        background-color: #00312c;
+        color: #fff;
+    }
+    #menu{
+        position: absolute;
+        width: 100%;
+        background-color: #014c45;
+        box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .8);
+        z-index: 1050;
+
+    }
+    .menu-items{
+        background-color: #014c45;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2);
+    }
+    .menu-items>a{
+        background-color: #00312c;
+    }
+    #button-group{
+        transform: translate(2%, 0);
     }
 }
-*{font-family: Quicksand, sans-serif;}
 #top-header{
     background-color: #014c45;
     margin: -1px -16px 0 -16px; 
@@ -46,16 +46,11 @@ h1{
 }
 
 .navbar-form{      
-    margin-top: 10px;
+    margin : 10px 0 0 0;
     text-align: left;
     border: none;
     box-shadow: none;
     -webkit-box-shadow: none;
-    float: left;
-}
-.navbar-default{
-    border-radius:0;
-    border: none;
 }
 #search-bar{
     color: #000;
@@ -66,7 +61,7 @@ h1{
     box-shadow: none;
     font-size: 18px;
     letter-spacing: 0.2em;
-    width: 80%;
+    width: 83%;
     float: left;
 }
 #search-bar::placeholder{
@@ -76,15 +71,10 @@ h1{
 }
 #search-button{
     font-size: 15.2px;
-    color: #014c45;
+    color: #014c45;    
 }
 #button-group{
     padding: 0;
-}
-#social-networks{
-    padding-top: 6px;
-    font-size: 3rem;
-    color: #fff;
 }
 #session-connect{
     margin-top: 3px;
@@ -97,14 +87,16 @@ h1{
 #menu-container{
     padding: 0;
 }
+#menu-container>button{
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .2);
+    float: none;
+    margin: 0 0 0 0;
+}
 #menu{
     padding-left: 2%;
-    text-align: center;
-}
-.menu-items{
-    letter-spacing: 0.0em;
 }
 .menu-items>a, .registration-link {
+    letter-spacing: 0.0em;
     color: #2ba698;
 }
 .menu-items>a:hover, .registration-link:hover {
@@ -119,5 +111,5 @@ h1{
     font-weight: bold;
     font-size: 13px;
     letter-spacing: 0.2em;
-    padding: 8% 2% 0 0;
+    padding: 0 2% 0 0;
 }

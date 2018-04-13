@@ -18,14 +18,25 @@ class users extends dataBase {
     public $subTypes = NULL;
     //J'ajoute des attribut privés afin de gérer plus facilement mon prefixe de tables (stocké dans des constantes).
     private $tableName = TABLEPREFIX . 'users';
-    private $frkUserTypes = FRKPREFIX . 'userTypes';
-    private $frkSubTypes = FRKPREFIX . 'subTypes';
+
 
 
     public function __construct() {
         parent::__construct();
     }
-    /*Grace à la fonction publique setUser, j'insert dans la table 'users' chaque champs renseignés dans le formulaire d'inscription d'utilisateurs
+    /*
+     * Grâce a la méthode getSearchResult je selectionne les champs qui m'interesse afin d'afficher le résultat de la demande entrée dans la barre de recheche
+     * Cette méthode prends en paramètre le mot clef.
+     */
+    public function getSearchResult($keyword) {        
+        $query = 'SELECT `id`, `lastname` FROM `' . $this->tableName . '` WHERE `lastname` LIKE :motclef';
+        $searchResult = $this->db->prepare($query);
+        $searchResult->bindValue(':motclef', '%' . $keyword . '%', PDO::PARAM_STR);
+        $searchResult->execute();
+        return $searchResult->fetchAll(PDO::FETCH_OBJ);
+    }
+    /*
+     * Grace à la méthode setUser, j'insert dans la table 'users' chaque champs renseignés dans le formulaire d'inscription d'utilisateurs
      * ainsi que le token de confirmation, générer dans le controller afin de valider l'inscription par e-mail.
      */
     public function setUser() {
@@ -119,7 +130,6 @@ class users extends dataBase {
         $request->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $request->execute();
     }
-
     public function connectUser(){
         $correct = FALSE;
         $query = 'SELECT `password` FROM `' . $this->tableName . '` WHERE `mail` = :mail AND `confirmed_at` IS NOT NULL';
@@ -160,8 +170,13 @@ class users extends dataBase {
         $request->bindValue(':password', $this->password, PDO::PARAM_STR);
         return $request->execute();
     }
-    
+    public function eraseUser() {
+        $query = 'DELETE FROM `' . $this->tableName . '` WHERE `qmsld_users`.`id` = :id';
+        $request = $this->db->prepare($query);
+        $request->bindValue(':id', $this->id, PDO::PARAM_INT);
+        return $request->execute();
+    }    
         public function __destruct(){
-        
-    }
+         parent::__destruct();
+        }
 }

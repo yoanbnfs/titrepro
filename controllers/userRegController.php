@@ -45,8 +45,6 @@ $errors = array();
                     $errors['firstname'] = 'Veuillez renseigner votre prénom';                
                 } elseif (!preg_match(REGTEXT, $_POST['checkInput'])) {                    
                     $errors['firstname'] = 'Votre prénom ne doit comporter que des lettres';
-                } else {                
-                    $success['lastname'] = 'Ok';             
                 }           
                 if (!empty($errors['firstname'])) {
                     echo json_encode($errors);
@@ -56,9 +54,7 @@ $errors = array();
             $user->password = $_POST['checkInput'];
             if (strlen($_POST['checkInput']) < 8) {                
                 $errors['password'] = 'Votre mot de passe doit comporter 8 caractères minimum';                
-            } else {
-                $success['password'] = 'Ok';               
-            }
+            } 
             if (!empty($errors['password'])) {
                 echo json_encode($errors);
             } 
@@ -68,9 +64,7 @@ $errors = array();
                 $errors['confirm-password'] = 'Veuillez confirmer votre mot de passe';                
             } elseif ($_POST['checkInput'] != $user->password){
                 $errors['confirm-password'] = 'La confirmation de mot de passe à echouée';
-            } else {
-                $success = 'ok';
-            }         
+            }        
             if (!empty($errors['confirm-password'])){
                 echo json_encode($errors);
             }
@@ -80,8 +74,6 @@ $errors = array();
                 $errors['birthdate'] = 'Veuillez renseigner votre date de naissance';                
             } elseif (!preg_match(REGDATE, $_POST['checkInput'])) {                    
                 $errors['birthdate'] = 'La date doit être au format : jj/mm/aaaa';                
-            } else {
-                $success['birthdate'] = 'Ok';
             } 
             if (!empty($errors['birthdate'])) {
                 echo json_encode($errors);            
@@ -97,9 +89,7 @@ $errors = array();
                     $errors['mail'] = 'E-mail non valide. Exemple : contact@domaine.fr';                    
             } elseif ($checkMail == 1) {                
                 $errors['mail'] = 'Cette adresse mail est déjà enregistrée';                  
-            } else {
-                $success['mail'] = 'Ok';
-            } 
+            }
             if(!empty($errors['mail'])){
                 echo json_encode($errors);            
             }
@@ -119,12 +109,15 @@ if (!empty($_POST['password']) && !empty($_POST['mail'])) {
     } elseif (!empty($_POST['name']) && count($errors) == 0){
         $user->name = strip_tags($_POST['name']);
     }    
-    $user->setUser();
-    $object = 'Confirmation de votre compte';
-    $content = 'Afin de valider votre inscription, veuillez cliquer ce le lien qui suit';
-    $tokenLink = 'http://titrepro/views/confirm.php?id=' . $user->id . '&token=' . $user->confirmation_token;
-    mail($user->mail, $object, $content . ' ' .  $tokenLink);
-    $_SESSION['flash']['success'] = 'Afin de valider votre compte, un email vous de confirmation vous a été envoyer';
-//    header('location: views/login.php');
-//    exit;    
+    if($user->setUser()){
+        $object = 'Confirmation de votre compte';
+        $content = 'Afin de valider votre inscription, veuillez cliquer ce le lien qui suit';
+        $tokenLink = 'http://titrepro/views/confirm.php?id=' . $user->id . '&token=' . $user->confirmation_token;
+        mail($user->mail, $object, $content . ' ' .  $tokenLink);
+        $_SESSION['flash']['success'] = 'Afin de valider votre compte, un email vous de confirmation vous a été envoyer';
+        header('location: views/login.php');
+        exit;    
+    } else {
+        $_SESSION['flash']['danger'] = 'Un problème est survenu, veuillez contacter un administrateur';
+    }
 }

@@ -1,13 +1,36 @@
-body{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  background: url('../img/worker.jpg') no-repeat;
-  background-size: cover;
-  background-position: top;
-  }
+@import url('https://fonts.googleapis.com/css?family=Paytone+One');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+*{font-family: Quicksand, sans-serif;}
 
-#scroll{
-    height:800px;
-    overflow: scroll; 
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: url('../img/worker.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+#full-link-container{
+    margin: 25% 0 25% 0;
+    padding: 10%;
+}
+#full-link{
+    padding: 5% 20%;
+    font-size: 1.5rem;
+}
+footer{
+    position: relative;
+    bottom:0;
+    padding-top:50px;
+    margin-top: 4%;
+    min-height: 150px;
+    background-color: #00100a;
+}
+#about-title{
+    font-family: 'Paytone One';
+    padding: 5% 0 5% 0;
+    color: #fff;
+    background-color: #014c45;
 }

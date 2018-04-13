@@ -28,7 +28,6 @@
                                                     <label class="form-labels" for="confirm-password">Confirmation du mot de passe</label>
                                                     <input class="form-input" type="password" name="confirm-password" placeholder="Confirmez votre mot de passe" />
                                                 </div>
-                        <!--                                    <p><i id="show-password" class="fas fa-eye"></i>Voir le mot de passe</p>-->
                                             </fieldset>   
                                             <fieldset id="user-civil-status">
                                                 <legend>Etat Civil</legend>
