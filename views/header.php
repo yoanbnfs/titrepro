@@ -24,13 +24,15 @@ if ($_SERVER['PHP_SELF'] == '/index.php') {
         <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="../assets/css/header.css">
         <link rel="stylesheet" href="../assets/css/register.css">
+        <script src="//cdn.ckeditor.com/4.9.1/standard-all/ckeditor.js"></script>
+
         <?php
         if ($_SERVER['PHP_SELF'] == '/views/account.php'){
             ?><link rel="stylesheet" href="../assets/css/account.css"><?php
         } ?>
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid" style="<?= $_SERVER['PHP_SELF'] == '/views/login.php' ? 'padding : 0' : '' ?>">
             <div class="navbar">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><!--COL principale-->            
@@ -43,24 +45,24 @@ if ($_SERVER['PHP_SELF'] == '/index.php') {
                                 <button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle"><i class="fas fa-bars"></i></button><!--Bouton pour le menu mobile-->
                                 <nav id="menu" class="collapse navbar-collapse"><!--Menu Collapse-->
                                     <ul class="nav navbar-nav">
-                                        <li class="menu-items"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                                        <li class="menu-items"><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
                                         <li class="menu-items"><a href="#"><i class="fas fa-map-marker"></i> Projets en cours</a></li>
                                         <li class="menu-items"><a href="#"><i class="fas fa-comment"></i> Contact</a></li>
                                     </ul>                        
                                 </nav>
                             </div>                       
-                            <div id="button-group" class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
+                            <div id="button-group" class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                                 <form class="navbar-form" action="#" method="POST">
                                     <input id="search-bar" type="search" class="form-control" name="searchbar" />
                                     <button id="search-button" type="submit" class="btn btn-default dropdown-toggle"><i class="fa fa-search"></i></button>
                                 </form>
                                 <div id="search-result" class="dropdown-menu"></div>
                             </div>
-                            <div id="session-connect" class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                            <div id="session-connect" class="col-lg-3 col-md-3 col-xs-12">
                             <?php
                             if (isset($_SESSION['auth'])){ ?>
                                 <a href="../views/account.php" name="account-button" class="registration-link"><i class="fas fa-user-circle"></i>Profil</a>
-                                <a href="../views/logout.php" name="logout-button" class="registration-link"><i class="fas fa-user-circle"></i>Déconnection</a>
+                                <a href="../views/logout.php" name="logout-button" class="registration-link"><i class="fas fa-sign-out-alt"></i>Déconnection</a>
                                 <?php
                             } else {
                              ?>

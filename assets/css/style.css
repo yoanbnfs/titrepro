@@ -12,16 +12,20 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
 }
+#panel{
+    margin: 40% 0 40% 0;
+}
 #full-link-container{
     margin: 25% 0 25% 0;
     padding: 10%;
 }
 #full-link{
     padding: 5% 20%;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 footer{
     position: relative;
+    clear: both;
     bottom:0;
     padding-top:50px;
     margin-top: 4%;

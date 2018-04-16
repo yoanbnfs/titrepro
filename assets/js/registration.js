@@ -7,6 +7,7 @@ var verifInputs = (function () {
             {
                 check: 'ajax' + $(this).attr('name'),
                 checkType: $('input[name=register-type]').val(),
+                checkPassword: $('#password').val(),
                 checkInput: $(this).val()
             }, function (errors) {
         $.each(errors, function (arrayId, error) {
@@ -24,7 +25,7 @@ var verifInputs = (function () {
     $('input[name=lastname]').keyup(verifInputs);
     $('input[name=firstname]').keyup(verifInputs);
     $('input[name=password]').blur(verifInputs);
-//    $('input[name=confirm-password]').blur(verifInputs);
+    $('input[name=confirm-password]').blur(verifInputs);
     $('input[name=birthdate]').change(verifInputs);
     $('input[name=mail]').blur(verifInputs);   
    

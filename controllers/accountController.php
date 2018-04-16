@@ -44,17 +44,16 @@ if ($_SESSION['auth']['type'] == 'particulier') {
 if (isset($_POST['profil-mail'])) {
     if (empty($_POST['profil-mail'])) {
         $updateErrors['emptyMail'] = 'Veuillez renseigner votre adresse email';
-    }
-    //else {
-    //            $account->mail = $_POST['profil-mail'];
-    //            $existingMail = $account->checkUserByMail();
-    //            $checkMail = intval($existingMail->mail);            
-    if (!preg_match(REGMAIL, $_POST['profil-mail'])) {
-        $updateErrors['regMail'] = 'E-mail non valide. Exemple : contact@domaine.fr';
-        //    }
-        //            elseif ($checkMail === 1) {
-        //                $updateErrors['checkMail'] = 'Cette adresse mail est déjà enregistrée';
-        //            }
+    }else {
+        $account->mail = $_POST['profil-mail'];
+        $existingMail = $account->checkUserByMail();
+        $checkMail = intval($existingMail->mail);            
+        if ($checkMail === 1 && $_POST['profil-mail'] != $_SESSION['auth']['mail']) {
+                $updateErrors['checkMail'] = 'Cette adresse mail est déjà enregistrée';
+        }
+        if (!preg_match(REGMAIL, $_POST['profil-mail'])) {
+            $updateErrors['regMail'] = 'E-mail non valide. Exemple : contact@domaine.fr';
+        } 
     }
 } else {
     if (isset($_POST['mail-connect'])) {
@@ -78,7 +77,7 @@ if (isset($_SESSION['auth']['mail']) && isset($_SESSION['auth']['password'])) {
         $account->firstname = $_SESSION['auth']['firstname'];
         $account->birthdate = $_SESSION['auth']['birthdate'];
 
-        if (isset($_POST['profil-lastname']) && !isset($_POST['profil-firstname']) && isset($_POST['profil-old']) && count($updateErrors) === 0) {
+        if (isset($_POST['profil-lastname']) && isset($_POST['profil-firstname']) && isset($_POST['profil-old']) && count($updateErrors) === 0) {
             $account->lastname = $_POST['profil-lastname'];
             $account->firstname = $_POST['profil-firstname'];
             $account->birthdate = $_POST['profil-old'];

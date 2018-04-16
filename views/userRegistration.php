@@ -23,11 +23,12 @@
                                                     <label class="form-labels" for="password">Mot de passe</label>
                                                     <input class="form-input" type="password" name="password" id="password" placeholder="8 cractères minimum" />
                                                 </div>
-                                                <p style="padding-top: 20px;"><i id="show-password" class="fas fa-eye"></i>Voir le mot de passe</p>
+                                                <p><i id="show-password" class="fas fa-eye"></i>Voir le mot de passe</p>
                                                 <div id="confirm-password-control">
                                                     <label class="form-labels" for="confirm-password">Confirmation du mot de passe</label>
-                                                    <input class="form-input" type="password" name="confirm-password" placeholder="Confirmez votre mot de passe" />
+                                                    <input class="form-input" type="password" name="confirm-password" id="confirm-password" placeholder="Confirmez votre mot de passe" />
                                                 </div>
+                                                <p><i id="show-confirm-password" class="fas fa-eye"></i>Voir le mot de passe</p>
                                             </fieldset>   
                                             <fieldset id="user-civil-status">
                                                 <legend>Etat Civil</legend>
@@ -47,11 +48,11 @@
                                                     <label class="form-labels" for="birthdate">Date de naissance</label>
                                                     <input class="form-input" id="datepicker" type="date" name="birthdate" data-toggle="datepicker"/>                            
                                                 </div>
-                                                <div id="subtypes-control">
+<!--                                                <div id="subtypes-control">
                                                     <label class="form labels" for="sutypes">Domaine de compétences</label>
                                                     <select id="subtypes" name="subtypes">
                                                         <option></option>
-                                                    </select>
+                                                    </select>-->
                                                 </div>
                                             </fieldset>
                                             <div id="validation-group">

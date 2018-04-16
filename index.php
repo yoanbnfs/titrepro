@@ -1,6 +1,10 @@
-<?php include 'views/header.php';
-if (isset($_SESSION['auth'])){ ?>
-<?php } else { ?>
+<?php 
+if (isset($_SESSION['auth'])){ 
+    header('location : views/articles.php');
+    exit();
+ ?>
+<?php } else { 
+include 'views/header.php'; ?>
 <div class="row">
     <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6">
         <div id="full-link-container" class="thumbnail text-center">

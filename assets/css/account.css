@@ -2,3 +2,20 @@
     border-color: #2196F3;
     transition: border-color 1s linear;
 }
+#account-block{
+    background-color: rgba(235, 235, 235, 1);
+    border-radius: 10px;
+    padding: 8%;
+    margin: 5% 0 2% 0;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.4);
+}
+.profil-submit-control{
+    margin-top: 4%;
+}
+#update-account input{
+    padding: 2%;
+}
+#update-image{
+    font-size: 18px;
+    margin: auto;
+}

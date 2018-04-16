@@ -9,6 +9,9 @@
         background-color: #00312c;
         color: #fff;
     }
+    .navbar-toggle>i{
+        padding: 25%;
+    }
     #menu{
         position: absolute;
         width: 100%;
@@ -28,9 +31,34 @@
         transform: translate(2%, 0);
     }
 }
+@media screen and (min-width: 769px) and (max-width: 992px){
+    #search-bar{
+        width: 50% !important;
+    }
+    #session-connect{
+        position: absolute;
+        top: -3px;
+        right: 5px;
+    }
+    #search-bar{
+        margin-left: 25%;
+    }
+    .menu-items{
+        margin-left: -5%;
+    }
+    #menu-container{
+        margin-left: -4%;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1405px){
+    .menu-items{
+        margin-left: -4%;
+    }
+}
 #top-header{
     background-color: #014c45;
     margin: -1px -16px 0 -16px; 
+    padding-bottom: 0.2%;
 }
 h1{
     font-family: 'Paytone One', sans-serif;
@@ -73,6 +101,9 @@ h1{
     font-size: 15.2px;
     color: #014c45;    
 }
+#search-result{
+    z-index: 1050;
+}
 #button-group{
     padding: 0;
 }
@@ -96,7 +127,6 @@ h1{
     padding-left: 2%;
 }
 .menu-items>a, .registration-link {
-    letter-spacing: 0.0em;
     color: #2ba698;
 }
 .menu-items>a:hover, .registration-link:hover {

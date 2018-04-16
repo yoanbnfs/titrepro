@@ -17,8 +17,8 @@
             <?php include 'header.php'; ?>
             
         </div>
-        <div class="col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6">            
-            <div class="panel panel-success">
+        <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">            
+            <div class="panel panel-success" id="panel">
                 <div class = "panel-heading">
                     <h5 id = "login-title">Connexion</h5>
                 </div>

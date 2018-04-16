@@ -42,9 +42,7 @@ legend{
 }
 .form-errors{
     color: red;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 10%);
+    padding-top: 5px;
     line-height: 0.8em;
     
 }
@@ -68,7 +66,8 @@ legend{
 #validation-group>button{
     margin: 5px;
 }
-#show-password{
+#show-password, #show-confirm-password{
+    padding-top: 5px;
     padding-right: 2%;
     cursor: pointer;
 }
